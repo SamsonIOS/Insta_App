@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// View Controller
+/// Экран с поиском фото , видео постов
 final class SearchViewController: UIViewController {
 
     // MARK: Life cycle

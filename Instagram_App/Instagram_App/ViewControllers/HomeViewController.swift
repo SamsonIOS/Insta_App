@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController {
     }
     
     // MARK: @IBOutlet
-    @IBOutlet weak var instagramTableView: UITableView!
+    @IBOutlet private weak var instagramTableView: UITableView!
     
     // MARK: Private properties
     private let identifierHistory = Identfier.history

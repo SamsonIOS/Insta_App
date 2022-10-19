@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// View Controller
+/// экран с добавлением фото видео в историю
 final class AddHistoryViewController: UIViewController {
 
     // MARK: Life cycle

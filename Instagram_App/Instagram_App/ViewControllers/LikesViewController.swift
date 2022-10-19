@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// View Controller
+/// Экран - кто поставил нам лайк
 final class LikesViewController: UIViewController {
 
     // MARK: Life cycle

@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// View Controller
+/// Экран с нашим профилем инстаграма
 final class UserViewController: UIViewController {
 
     // MARK: Life cycle
