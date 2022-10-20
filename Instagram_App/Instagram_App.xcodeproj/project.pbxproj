@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330302C928FEB093003A9F0A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330302C828FEB093003A9F0A /* Color.xcassets */; };
 		338E63D028FD3A64000B017A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E63CF28FD3A64000B017A /* AppDelegate.swift */; };
 		338E63D228FD3A64000B017A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E63D128FD3A64000B017A /* SceneDelegate.swift */; };
-		338E63D428FD3A64000B017A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E63D328FD3A64000B017A /* ViewController.swift */; };
+		338E63D428FD3A64000B017A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E63D328FD3A64000B017A /* HomeViewController.swift */; };
 		338E63D728FD3A64000B017A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338E63D528FD3A64000B017A /* Main.storyboard */; };
 		338E63D928FD3A67000B017A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338E63D828FD3A67000B017A /* Assets.xcassets */; };
 		338E63DC28FD3A67000B017A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338E63DA28FD3A67000B017A /* LaunchScreen.storyboard */; };
+		338E77AE28FDA91300683685 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77AD28FDA91300683685 /* SearchViewController.swift */; };
+		338E77B028FDA93300683685 /* AddHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77AF28FDA93300683685 /* AddHistoryViewController.swift */; };
+		338E77B228FDA95C00683685 /* LikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77B128FDA95C00683685 /* LikesViewController.swift */; };
+		338E77B428FDA97F00683685 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77B328FDA97F00683685 /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330302C828FEB093003A9F0A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		338E63CC28FD3A64000B017A /* Instagram_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338E63CF28FD3A64000B017A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		338E63D128FD3A64000B017A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		338E63D328FD3A64000B017A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		338E63D328FD3A64000B017A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		338E63D628FD3A64000B017A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		338E63D828FD3A67000B017A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		338E63DB28FD3A67000B017A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		338E63DD28FD3A67000B017A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		338E77AD28FDA91300683685 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		338E77AF28FDA93300683685 /* AddHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewController.swift; sourceTree = "<group>"; };
+		338E77B128FDA95C00683685 /* LikesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesViewController.swift; sourceTree = "<group>"; };
+		338E77B328FDA97F00683685 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,26 @@
 			children = (
 				338E63CF28FD3A64000B017A /* AppDelegate.swift */,
 				338E63D128FD3A64000B017A /* SceneDelegate.swift */,
-				338E63D328FD3A64000B017A /* ViewController.swift */,
+				338E77AC28FDA8D600683685 /* ViewControllers */,
 				338E63D528FD3A64000B017A /* Main.storyboard */,
 				338E63D828FD3A67000B017A /* Assets.xcassets */,
+				330302C828FEB093003A9F0A /* Color.xcassets */,
 				338E63DA28FD3A67000B017A /* LaunchScreen.storyboard */,
 				338E63DD28FD3A67000B017A /* Info.plist */,
 			);
 			path = Instagram_App;
+			sourceTree = "<group>";
+		};
+		338E77AC28FDA8D600683685 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				338E63D328FD3A64000B017A /* HomeViewController.swift */,
+				338E77AD28FDA91300683685 /* SearchViewController.swift */,
+				338E77AF28FDA93300683685 /* AddHistoryViewController.swift */,
+				338E77B128FDA95C00683685 /* LikesViewController.swift */,
+				338E77B328FDA97F00683685 /* UserViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				338E63DC28FD3A67000B017A /* LaunchScreen.storyboard in Resources */,
+				330302C928FEB093003A9F0A /* Color.xcassets in Resources */,
 				338E63D928FD3A67000B017A /* Assets.xcassets in Resources */,
 				338E63D728FD3A64000B017A /* Main.storyboard in Resources */,
 			);
@@ -160,9 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338E63D428FD3A64000B017A /* ViewController.swift in Sources */,
+				338E77B428FDA97F00683685 /* UserViewController.swift in Sources */,
+				338E63D428FD3A64000B017A /* HomeViewController.swift in Sources */,
 				338E63D028FD3A64000B017A /* AppDelegate.swift in Sources */,
+				338E77AE28FDA91300683685 /* SearchViewController.swift in Sources */,
 				338E63D228FD3A64000B017A /* SceneDelegate.swift in Sources */,
+				338E77B028FDA93300683685 /* AddHistoryViewController.swift in Sources */,
+				338E77B228FDA95C00683685 /* LikesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
