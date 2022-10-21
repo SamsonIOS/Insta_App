@@ -12,9 +12,9 @@ final class LikesTableViewController: UITableViewController {
 
     // MARK: Constants
     private enum Constants {
-        static let firstLike = "comment"
-        static let secondLike = "follow"
-        static let thirdLike = "followed"
+        static let commentCell = "comment"
+        static let followCell = "follow"
+        static let followedCell = "followed"
     }
     
     private enum Sections {
@@ -56,15 +56,15 @@ extension LikesTableViewController {
         case .today:
             switch indexPath.row % 3 {
             case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike,
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell,
                                                          for: indexPath)
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.secondLike,
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followCell,
                                                          for: indexPath)
                 return cell
             case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.thirdLike,
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followedCell,
                                                          for: indexPath)
                 return cell
             default:
@@ -74,14 +74,14 @@ extension LikesTableViewController {
         case .yearstoday:
             switch indexPath.row % 3 {
             case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike, for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell, for: indexPath)
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike,
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell,
                                                          for: indexPath)
                 return cell
             case 2, 3, 4:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.thirdLike,
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followedCell,
                                                          for: indexPath)
                 return cell
             default:
@@ -91,14 +91,14 @@ extension LikesTableViewController {
         case .lastWeak:
             switch indexPath.row % 3 {
             case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike, for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell, for: indexPath)
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.secondLike,
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followCell,
                                                          for: indexPath)
                 return cell
             case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.thirdLike,
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followedCell,
                                                          for: indexPath)
                 return cell
             default:
