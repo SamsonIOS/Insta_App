@@ -544,8 +544,32 @@
                         <color key="sectionIndexColor" name="blueColor"/>
                         <color key="sectionIndexBackgroundColor" name="whiteColor"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="zapros" rowHeight="40" id="yc3-jU-sl5">
+                                <rect key="frame" x="0.0" y="49.5" width="414" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yc3-jU-sl5" id="DEJ-X6-qCW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Запросы на подписку" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-z8-fNj">
+                                            <rect key="frame" x="20" y="11" width="414" height="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="whiteColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="blackColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="m6l-z8-fNj" secondAttribute="bottom" constant="10" id="44t-9C-fh3"/>
+                                    <constraint firstItem="m6l-z8-fNj" firstAttribute="leading" secondItem="yc3-jU-sl5" secondAttribute="leading" constant="20" id="N5B-y3-ga6"/>
+                                    <constraint firstItem="m6l-z8-fNj" firstAttribute="width" secondItem="yc3-jU-sl5" secondAttribute="width" id="UDc-UK-yhQ"/>
+                                    <constraint firstItem="m6l-z8-fNj" firstAttribute="top" secondItem="yc3-jU-sl5" secondAttribute="top" constant="11" id="f6o-lg-I2e"/>
+                                    <constraint firstItem="m6l-z8-fNj" firstAttribute="height" secondItem="yc3-jU-sl5" secondAttribute="height" multiplier="0.42" constant="2.1999999999999993" id="v3g-9y-VgH"/>
+                                </constraints>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="77" reuseIdentifier="comment" rowHeight="77" id="My8-hP-VwP">
-                                <rect key="frame" x="0.0" y="32" width="414" height="77"/>
+                                <rect key="frame" x="0.0" y="89.5" width="414" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="My8-hP-VwP" id="h7e-mm-oFa">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
@@ -596,7 +620,7 @@
                                 </constraints>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="followed" rowHeight="111" id="pdf-zN-Cin">
-                                <rect key="frame" x="0.0" y="109" width="414" height="111"/>
+                                <rect key="frame" x="0.0" y="166.5" width="414" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pdf-zN-Cin" id="e2d-Oj-FIq">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
@@ -653,7 +677,7 @@
                                 </constraints>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="follow" rowHeight="97" id="One-6z-eKe">
-                                <rect key="frame" x="0.0" y="220" width="414" height="97"/>
+                                <rect key="frame" x="0.0" y="277.5" width="414" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="One-6z-eKe" id="px4-H4-ipn">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
@@ -723,6 +747,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Действие" id="LIY-xV-TdG"/>
+                    <connections>
+                        <outlet property="likesTableView" destination="XXk-bC-2Og" id="sh7-xl-47L"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSf-XH-QYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

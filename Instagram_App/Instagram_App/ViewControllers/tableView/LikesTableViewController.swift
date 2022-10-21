@@ -15,20 +15,43 @@ final class LikesTableViewController: UITableViewController {
         static let commentCell = "comment"
         static let followCell = "follow"
         static let followedCell = "followed"
+        static let zapros = "zapros"
     }
     
     private enum Sections {
+        case zapros
         case today
         case yearstoday
         case lastWeak
     }
-
+    
+    // MARK: IBOutlet
+    @IBOutlet var likesTableView: UITableView!
+    
     // MARK: Private properties
-    private let sections: [Sections] = [.today, .yearstoday, .lastWeak]
+    private let sections: [Sections] = [.zapros, .today, .yearstoday, .lastWeak]
     
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        createRefresh()
+    }
+    
+    // MARK: @Objc private action
+    @objc private func refreshControlAction(sender: UIRefreshControl) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.likesTableView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    // MARK: Private Methods
+    private func createRefresh() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .white
+        likesTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshControlAction),
+                                 for: .valueChanged)
     }
 }
     
@@ -41,6 +64,8 @@ extension LikesTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch sections[section] {
+        case .zapros:
+            return 1
         case .today:
             return 3
         case .yearstoday:
@@ -52,7 +77,10 @@ extension LikesTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch sections[indexPath.section] {
-        
+        case .zapros:
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.zapros,
+                                                     for: indexPath)
+            return cell
         case .today:
             switch indexPath.row % 3 {
             case 0:
@@ -112,7 +140,10 @@ extension LikesTableViewController {
         switch sections[section] {
         case .today, .yearstoday, .lastWeak:
             return 40
+        default:
+            break
         }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -128,6 +159,8 @@ extension LikesTableViewController {
             label.text = "вчера"
         case .lastWeak:
             label.text = "на прошлой недели"
+        default:
+            break
         }
         return label
     }
