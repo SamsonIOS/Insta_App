@@ -8,7 +8,7 @@
 import UIKit
 
 /// Экран - кто поставил нам лайк
-final class LikesViewController: UIViewController {
+final class LikesViewController: UITableViewController {
 
     // MARK: Life cycle
     override func viewDidLoad() {
