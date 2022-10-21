@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// VC
+/// Экран с активностью, лайки, комментарии, рекомендации
 final class LikesTableViewController: UITableViewController {
 
     // MARK: Constants
@@ -23,15 +23,16 @@ final class LikesTableViewController: UITableViewController {
         case lastWeak
     }
 
+    // MARK: Private properties
     private let sections: [Sections] = [.today, .yearstoday, .lastWeak]
     
+    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
-    // MARK: - Table view data source
-
+    
+// MARK: Extension + LikesTableViewController
 extension LikesTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,8 +47,6 @@ extension LikesTableViewController {
             return 4
         case .lastWeak:
             return 5
-        default:
-            break
         }
     }
 
