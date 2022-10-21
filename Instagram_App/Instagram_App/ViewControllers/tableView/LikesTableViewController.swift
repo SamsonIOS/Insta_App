@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// VC
+/// Экран с лайками наших фото, подписками и рекомендациями
 final class LikesTableViewController: UITableViewController {
 
     // MARK: Constants
@@ -16,6 +16,8 @@ final class LikesTableViewController: UITableViewController {
         static let secondLike = "follow"
         static let thirdLike = "followed"
     }
+    
+    // MARK: IBOutlets
     @IBOutlet var likesView: UITableView!
     
     // MARK: Life cycle
@@ -24,12 +26,14 @@ final class LikesTableViewController: UITableViewController {
         createRefresh()
     }
     
+    // MARK: @Objc private action
     @objc private func refreshControlAction(sender: UIRefreshControl) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.likesView.refreshControl?.endRefreshing()
         }
     }
     
+    // MARK: Private Methods
     private func createRefresh() {
           let refreshControl = UIRefreshControl()
           refreshControl.tintColor = .white
@@ -38,7 +42,10 @@ final class LikesTableViewController: UITableViewController {
                                    action: #selector(refreshControlAction),
                                    for: .valueChanged)
       }
-    
+}
+
+// MARK: Extension + LikesTableViewController
+extension LikesTableViewController {
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as? UITableViewHeaderFooterView
         header?.textLabel?.textColor = .white

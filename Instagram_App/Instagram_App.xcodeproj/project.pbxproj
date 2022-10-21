@@ -16,7 +16,6 @@
 		338E63DC28FD3A67000B017A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338E63DA28FD3A67000B017A /* LaunchScreen.storyboard */; };
 		338E77AE28FDA91300683685 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77AD28FDA91300683685 /* SearchViewController.swift */; };
 		338E77B028FDA93300683685 /* AddHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77AF28FDA93300683685 /* AddHistoryViewController.swift */; };
-		338E77B228FDA95C00683685 /* LikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77B128FDA95C00683685 /* LikesViewController.swift */; };
 		338E77B428FDA97F00683685 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77B328FDA97F00683685 /* UserViewController.swift */; };
 		33C5CFF32901CD920083CBEC /* LikesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5CFF22901CD920083CBEC /* LikesTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		338E63DD28FD3A67000B017A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		338E77AD28FDA91300683685 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		338E77AF28FDA93300683685 /* AddHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewController.swift; sourceTree = "<group>"; };
-		338E77B128FDA95C00683685 /* LikesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesViewController.swift; sourceTree = "<group>"; };
 		338E77B328FDA97F00683685 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		33C5CFF22901CD920083CBEC /* LikesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +84,6 @@
 				338E63D328FD3A64000B017A /* HomeViewController.swift */,
 				338E77AD28FDA91300683685 /* SearchViewController.swift */,
 				338E77AF28FDA93300683685 /* AddHistoryViewController.swift */,
-				338E77B128FDA95C00683685 /* LikesViewController.swift */,
 				338E77B328FDA97F00683685 /* UserViewController.swift */,
 				33C5CFF62901CF920083CBEC /* tableView */,
 			);
@@ -202,7 +199,6 @@
 				338E77AE28FDA91300683685 /* SearchViewController.swift in Sources */,
 				338E63D228FD3A64000B017A /* SceneDelegate.swift in Sources */,
 				338E77B028FDA93300683685 /* AddHistoryViewController.swift in Sources */,
-				338E77B228FDA95C00683685 /* LikesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
