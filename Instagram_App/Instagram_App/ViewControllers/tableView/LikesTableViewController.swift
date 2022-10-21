@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Экран с лайками наших фото, подписками и рекомендациями
+/// VC
 final class LikesTableViewController: UITableViewController {
 
     // MARK: Constants
@@ -17,37 +17,119 @@ final class LikesTableViewController: UITableViewController {
         static let thirdLike = "followed"
     }
     
-    // MARK: IBOutlets
-    @IBOutlet var likesView: UITableView!
+    private enum Sections {
+        case today
+        case yearstoday
+        case lastWeak
+    }
+
+    private let sections: [Sections] = [.today, .yearstoday, .lastWeak]
     
-    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        createRefresh()
+
+    }
+}
+    // MARK: - Table view data source
+
+extension LikesTableViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        sections.count
     }
     
-    // MARK: @Objc private action
-    @objc private func refreshControlAction(sender: UIRefreshControl) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.likesView.refreshControl?.endRefreshing()
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch sections[section] {
+        case .today:
+            return 3
+        case .yearstoday:
+            return 4
+        case .lastWeak:
+            return 5
+        default:
+            break
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch sections[indexPath.section] {
+        
+        case .today:
+            switch indexPath.row % 3 {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike,
+                                                         for: indexPath)
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.secondLike,
+                                                         for: indexPath)
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.thirdLike,
+                                                         for: indexPath)
+                return cell
+            default:
+                break
+            }
+
+        case .yearstoday:
+            switch indexPath.row % 3 {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike, for: indexPath)
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike,
+                                                         for: indexPath)
+                return cell
+            case 2, 3, 4:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.thirdLike,
+                                                         for: indexPath)
+                return cell
+            default:
+                break
+            }
+            
+        case .lastWeak:
+            switch indexPath.row % 3 {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.firstLike, for: indexPath)
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.secondLike,
+                                                         for: indexPath)
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.thirdLike,
+                                                         for: indexPath)
+                return cell
+            default:
+                break
+            }
+        }
+        return UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch sections[section] {
+        case .today, .yearstoday, .lastWeak:
+            return 40
         }
     }
     
-    // MARK: Private Methods
-    private func createRefresh() {
-          let refreshControl = UIRefreshControl()
-          refreshControl.tintColor = .white
-        likesView.refreshControl = refreshControl
-          refreshControl.addTarget(self,
-                                   action: #selector(refreshControlAction),
-                                   for: .valueChanged)
-      }
-}
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.backgroundColor = .black
+        label.textColor = .white
+        label.font = .boldSystemFont(ofSize: 15)
 
-// MARK: Extension + LikesTableViewController
-extension LikesTableViewController {
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header = view as? UITableViewHeaderFooterView
-        header?.textLabel?.textColor = .white
+        switch sections[section] {
+        case .today:
+            label.text = "сегодня"
+        case .yearstoday:
+            label.text = "вчера"
+        case .lastWeak:
+            label.text = "на прошлой недели"
+        }
+        return label
     }
 }
