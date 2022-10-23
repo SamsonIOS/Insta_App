@@ -10,6 +10,10 @@ import UIKit
 /// ячейка с комментариями
 final class CommentTableViewCell: UITableViewCell {
     
+    // MARK: Constants
+    private enum Color {
+        static let colorGray = "colorGray"
+    }
     // MARK: IBOutlet
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var commentLabel: UILabel!
@@ -54,7 +58,7 @@ extension CommentTableViewCell {
         
         myMutableString.addAttribute(
             NSAttributedString.Key.foregroundColor,
-            value: UIColor(named: "colorGray") ?? "",
+            value: UIColor(named: Color.colorGray) ?? "",
             range: NSRange(location: post.nickname.count + post.comment.count + 1, length: post.time.count + 1)
         )
         

@@ -24,6 +24,36 @@ final class LikesTableViewController: UITableViewController {
         case lastWeak
     }
     
+    private enum FirstUser {
+        static let nickname = "kot_Bali"
+        static let comment = "понравился ваш комментарий: классные очки"
+        static let nameForUserImage = "ava"
+        static let contentNameImage = "kot1"
+        static let time = "5ч."
+    }
+    
+    private enum SecondUser {
+        static let nickname = "kot_Kokos"
+        static let comment = "понравился ваш комментарий: чилишь)"
+        static let nameForUserImage = "kot4"
+        static let contentNameImage = "kot1"
+        static let time = "6ч."
+    }
+    
+    private enum ThirdUser {
+        static let nickname = "kot_Varvar"
+        static let comment = "подписался(-ась) на ваши обновления."
+        static let nameForUserImage = "kot5"
+        static let emptyString = ""
+        static let time = "1нед."
+    }
+    
+    private enum HeaderSections {
+        static let today = "Сегодня"
+        static let yearstoday = "Вчера"
+        static let lastWeak = "На прошлой недели"
+    }
+    
     // MARK: IBOutlet
     @IBOutlet private var likesTableView: UITableView!
     
@@ -31,33 +61,33 @@ final class LikesTableViewController: UITableViewController {
     private let sections: [Sections] = [.zapros, .today, .yearstoday, .lastWeak]
     private let infoCell: [Info] = [
         Info(
-            nickname: "kot_Bali",
-            comment: "понравился ваш комментарий: классные очки",
-            userImageName: "ava",
-            contentImageName: "kot1",
+            nickname: FirstUser.nickname,
+            comment: FirstUser.comment,
+            userImageName: FirstUser.nameForUserImage,
+            contentImageName: FirstUser.contentNameImage,
             isFollow: nil,
-            time: "5ч."),
+            time: FirstUser.time),
         Info(
-            nickname: "kot_Kokos",
-            comment: "понравился ваш комментарий: чилишь)",
-            userImageName: "kot4",
-            contentImageName: "kot1",
+            nickname: SecondUser.nickname,
+            comment: SecondUser.comment,
+            userImageName: SecondUser.nameForUserImage,
+            contentImageName: SecondUser.contentNameImage,
             isFollow: nil,
-            time: "6ч."),
+            time: SecondUser.time),
         Info(
-            nickname: "kot_Varvar",
-            comment: "подписался(-ась) на ваши обновления.",
-            userImageName: "kot5",
-            contentImageName: "",
+            nickname: SecondUser.nickname,
+            comment: SecondUser.comment,
+            userImageName: SecondUser.nameForUserImage,
+            contentImageName: SecondUser.contentNameImage,
             isFollow: true,
-            time: "1нед."),
+            time: SecondUser.time),
         Info(
-            nickname: "kot_Persik",
-            comment: "есть в Instagram, вы можете знать этого человека.",
-            userImageName: "kot6",
-            contentImageName: "",
+            nickname: ThirdUser.nickname,
+            comment: ThirdUser.comment,
+            userImageName: ThirdUser.nameForUserImage,
+            contentImageName: ThirdUser.emptyString,
             isFollow: false,
-            time: "2нед.")
+            time: ThirdUser.time)
     ]
     
     // MARK: Life cycle
@@ -83,7 +113,7 @@ final class LikesTableViewController: UITableViewController {
     }
 }
 
-// MARK: Extension - LikesTableViewController
+// MARK: TableViewDelegate, TableViewDataSource
 extension LikesTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -169,11 +199,11 @@ extension LikesTableViewController {
         
         switch sections[section] {
         case .today:
-            label.text = "Cегодня"
+            label.text = HeaderSections.today
         case .yearstoday:
-            label.text = "Вчера"
+            label.text = HeaderSections.yearstoday
         case .lastWeak:
-            label.text = "На прошлой недели"
+            label.text = HeaderSections.lastWeak
         default:
             break
         }
