@@ -25,7 +25,7 @@ final class LikesTableViewController: UITableViewController {
     }
     
     // MARK: IBOutlet
-    @IBOutlet var likesTableView: UITableView!
+    @IBOutlet private var likesTableView: UITableView!
     
     // MARK: Private properties
     private let sections: [Sections] = [.zapros, .today, .yearstoday, .lastWeak]
@@ -66,14 +66,13 @@ final class LikesTableViewController: UITableViewController {
         createRefresh()
     }
     
-    // MARK: @Objc private action
+    // MARK: Private Methods
     @objc private func refreshControlAction(sender: UIRefreshControl) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.likesTableView.refreshControl?.endRefreshing()
         }
     }
     
-    // MARK: Private Methods
     private func createRefresh() {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .white

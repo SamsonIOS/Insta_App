@@ -11,9 +11,9 @@ import UIKit
 final class CommentTableViewCell: UITableViewCell {
     
     // MARK: IBOutlet
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var commentImageView: UIImageView!
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var commentLabel: UILabel!
+    @IBOutlet private weak var commentImageView: UIImageView!
     
     // MARK: Life cycle
     override func awakeFromNib() {

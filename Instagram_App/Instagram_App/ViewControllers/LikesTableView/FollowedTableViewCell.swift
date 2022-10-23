@@ -11,9 +11,9 @@ import UIKit
 final class FollowedTableViewCell: UITableViewCell {
 
     // MARK: IBOutlet
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var infoUser: UILabel!
-    @IBOutlet weak var followedButtons: UIButton!
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var infoUser: UILabel!
+    @IBOutlet private weak var followedButtons: UIButton!
     
     // MARK: Life cycle
     override func awakeFromNib() {
