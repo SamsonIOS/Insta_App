@@ -50,7 +50,7 @@ final class LikesTableViewController: UITableViewController {
     
     private enum HeaderSections {
         static let today = "Сегодня"
-        static let yearstoday = "Вчера"
+        static let yesterday = "Вчера"
         static let lastWeak = "На прошлой недели"
     }
     
@@ -201,7 +201,7 @@ extension LikesTableViewController {
         case .today:
             label.text = HeaderSections.today
         case .yearstoday:
-            label.text = HeaderSections.yearstoday
+            label.text = HeaderSections.yesterday
         case .lastWeak:
             label.text = HeaderSections.lastWeak
         default:
