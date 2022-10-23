@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		330302C928FEB093003A9F0A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330302C828FEB093003A9F0A /* Color.xcassets */; };
+		3358BCF02905528200A59E04 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358BCEF2905528200A59E04 /* CommentTableViewCell.swift */; };
+		3358BCF2290554BC00A59E04 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358BCF1290554BC00A59E04 /* ModelCell.swift */; };
+		3358BCF629055B5600A59E04 /* FollowedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358BCF529055B5600A59E04 /* FollowedTableViewCell.swift */; };
 		338E63D028FD3A64000B017A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E63CF28FD3A64000B017A /* AppDelegate.swift */; };
 		338E63D228FD3A64000B017A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E63D128FD3A64000B017A /* SceneDelegate.swift */; };
 		338E63D428FD3A64000B017A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E63D328FD3A64000B017A /* HomeViewController.swift */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		330302C828FEB093003A9F0A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		3358BCEF2905528200A59E04 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		3358BCF1290554BC00A59E04 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
+		3358BCF529055B5600A59E04 /* FollowedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedTableViewCell.swift; sourceTree = "<group>"; };
 		338E63CC28FD3A64000B017A /* Instagram_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338E63CF28FD3A64000B017A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		338E63D128FD3A64000B017A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 		338E63CE28FD3A64000B017A /* Instagram_App */ = {
 			isa = PBXGroup;
 			children = (
+				3358BCF1290554BC00A59E04 /* ModelCell.swift */,
 				338E63CF28FD3A64000B017A /* AppDelegate.swift */,
 				338E63D128FD3A64000B017A /* SceneDelegate.swift */,
 				338E77AC28FDA8D600683685 /* ViewControllers */,
@@ -85,17 +92,19 @@
 				338E77AD28FDA91300683685 /* SearchViewController.swift */,
 				338E77AF28FDA93300683685 /* AddHistoryViewController.swift */,
 				338E77B328FDA97F00683685 /* UserViewController.swift */,
-				33C5CFF62901CF920083CBEC /* tableView */,
+				33C5CFF62901CF920083CBEC /* LikesTableView */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		33C5CFF62901CF920083CBEC /* tableView */ = {
+		33C5CFF62901CF920083CBEC /* LikesTableView */ = {
 			isa = PBXGroup;
 			children = (
 				33C5CFF22901CD920083CBEC /* LikesTableViewController.swift */,
+				3358BCEF2905528200A59E04 /* CommentTableViewCell.swift */,
+				3358BCF529055B5600A59E04 /* FollowedTableViewCell.swift */,
 			);
-			path = tableView;
+			path = LikesTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3358BCF2290554BC00A59E04 /* ModelCell.swift in Sources */,
 				33C5CFF32901CD920083CBEC /* LikesTableViewController.swift in Sources */,
 				338E77B428FDA97F00683685 /* UserViewController.swift in Sources */,
+				3358BCF629055B5600A59E04 /* FollowedTableViewCell.swift in Sources */,
 				338E63D428FD3A64000B017A /* HomeViewController.swift in Sources */,
+				3358BCF02905528200A59E04 /* CommentTableViewCell.swift in Sources */,
 				338E63D028FD3A64000B017A /* AppDelegate.swift in Sources */,
 				338E77AE28FDA91300683685 /* SearchViewController.swift in Sources */,
 				338E63D228FD3A64000B017A /* SceneDelegate.swift in Sources */,

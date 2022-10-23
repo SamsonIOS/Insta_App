@@ -9,11 +9,10 @@ import UIKit
 
 /// Экран с активностью, лайки, комментарии, рекомендации
 final class LikesTableViewController: UITableViewController {
-
+    
     // MARK: Constants
     private enum Constants {
         static let commentCell = "comment"
-        static let followCell = "follow"
         static let followedCell = "followed"
         static let zapros = "zapros"
     }
@@ -30,6 +29,36 @@ final class LikesTableViewController: UITableViewController {
     
     // MARK: Private properties
     private let sections: [Sections] = [.zapros, .today, .yearstoday, .lastWeak]
+    private let infoCell: [Info] = [
+        Info(
+            nickname: "kot_Bali",
+            comment: "понравился ваш комментарий: классные очки",
+            userImageName: "ava",
+            contentImageName: "kot1",
+            isFollow: nil,
+            time: "5ч."),
+        Info(
+            nickname: "kot_Kokos",
+            comment: "понравился ваш комментарий: чилишь)",
+            userImageName: "kot4",
+            contentImageName: "kot1",
+            isFollow: nil,
+            time: "6ч."),
+        Info(
+            nickname: "kot_Varvar",
+            comment: "подписался(-ась) на ваши обновления.",
+            userImageName: "kot5",
+            contentImageName: "",
+            isFollow: true,
+            time: "1нед."),
+        Info(
+            nickname: "kot_Persik",
+            comment: "есть в Instagram, вы можете знать этого человека.",
+            userImageName: "kot6",
+            contentImageName: "",
+            isFollow: false,
+            time: "2нед.")
+    ]
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -54,8 +83,8 @@ final class LikesTableViewController: UITableViewController {
                                  for: .valueChanged)
     }
 }
-    
-// MARK: Extension + LikesTableViewController
+
+// MARK: Extension - LikesTableViewController
 extension LikesTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,71 +98,58 @@ extension LikesTableViewController {
         case .today:
             return 3
         case .yearstoday:
-            return 4
+            return infoCell.count
         case .lastWeak:
-            return 5
+            return infoCell.count
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let commentCell = tableView.dequeueReusableCell(
+            withIdentifier: Constants.commentCell,
+            for: indexPath) as? CommentTableViewCell
+        else { return UITableViewCell() }
+        
+        guard let followCell = tableView.dequeueReusableCell(
+            withIdentifier: Constants.followedCell,
+            for: indexPath) as? FollowedTableViewCell
+        else { return UITableViewCell() }
+        
         switch sections[indexPath.section] {
         case .zapros:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.zapros,
-                                                     for: indexPath)
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: Constants.zapros,
+                for: indexPath)
             return cell
+            
         case .today:
-            switch indexPath.row % 3 {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell,
-                                                         for: indexPath)
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followCell,
-                                                         for: indexPath)
-                return cell
-            case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followedCell,
-                                                         for: indexPath)
-                return cell
-            default:
-                break
+            if infoCell[indexPath.row].isFollow != nil {
+                followCell.createUser(infoCell[indexPath.row])
+                return followCell
+            } else {
+                commentCell.createInfo(infoCell[indexPath.row])
+                return commentCell
             }
-
+            
         case .yearstoday:
-            switch indexPath.row % 3 {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell, for: indexPath)
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell,
-                                                         for: indexPath)
-                return cell
-            case 2, 3, 4:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followedCell,
-                                                         for: indexPath)
-                return cell
-            default:
-                break
+            if infoCell[indexPath.row].isFollow != nil {
+                followCell.createUser(infoCell[indexPath.row])
+                return followCell
+            } else {
+                commentCell.createInfo(infoCell[indexPath.row])
+                return commentCell
             }
             
         case .lastWeak:
-            switch indexPath.row % 3 {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commentCell, for: indexPath)
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followCell,
-                                                         for: indexPath)
-                return cell
-            case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.followedCell,
-                                                         for: indexPath)
-                return cell
-            default:
-                break
+            if infoCell[indexPath.row].isFollow != nil {
+                followCell.createUser(infoCell[indexPath.row])
+                return followCell
+            } else {
+                commentCell.createInfo(infoCell[indexPath.row])
+                return commentCell
             }
         }
-        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -151,14 +167,14 @@ extension LikesTableViewController {
         label.backgroundColor = .black
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 15)
-
+        
         switch sections[section] {
         case .today:
-            label.text = "сегодня"
+            label.text = "Cегодня"
         case .yearstoday:
-            label.text = "вчера"
+            label.text = "Вчера"
         case .lastWeak:
-            label.text = "на прошлой недели"
+            label.text = "На прошлой недели"
         default:
             break
         }
