@@ -20,20 +20,35 @@ final class SearchViewController: UIViewController {
         static let postImageCell = "imageCell"
     }
     
+    private enum NameImageView {
+        static let first = "kot1"
+        static let second = "kot2"
+        static let third = "kot3"
+        static let fourth = "kot4"
+        static let five = "kot5"
+        static let six = "kot10"
+        static let seven = "kot7"
+        static let eight = "kot8"
+        static let nine = "kot9"
+    }
+    
     // MARK: Private propertis
-    private let photo = PostCell(nameImage: ["kot1", "kot2", "kot3", "kot4", "kot5", "kot7", "kot8", "kot9", "kot10"])
+    private let photo = PostCell(nameImage: [
+    NameImageView.first, NameImageView.second,
+    NameImageView.third, NameImageView.fourth,
+    NameImageView.five, NameImageView.seven,
+    NameImageView.eight, NameImageView.nine, NameImageView.six])
     
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return photo.nameImage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
