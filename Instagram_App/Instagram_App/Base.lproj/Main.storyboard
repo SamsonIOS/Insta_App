@@ -525,13 +525,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-Iu-I8y">
-                                <rect key="frame" x="0.0" y="88" width="414" height="775"/>
-                                <color key="backgroundColor" name="blackColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-Iu-I8y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" name="colorGray"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoUser" rowHeight="105" id="F9d-1I-lKo">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="105"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F9d-1I-lKo" id="5JD-av-O1U">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
@@ -616,7 +616,7 @@
                                         <color key="backgroundColor" name="blackColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoMan" rowHeight="126" id="qLF-PE-nzY">
-                                        <rect key="frame" x="0.0" y="154.5" width="414" height="126"/>
+                                        <rect key="frame" x="0.0" y="149.5" width="414" height="126"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qLF-PE-nzY" id="xje-OU-yQO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
@@ -698,7 +698,7 @@
                                         <color key="backgroundColor" name="blackColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="88" id="NQZ-NI-bjf" customClass="HistoryTableViewCell" customModule="Instagram_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="280.5" width="414" height="88"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NQZ-NI-bjf" id="1xO-Lr-XVJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
@@ -779,18 +779,18 @@
                                             <outlet property="collectionHistory" destination="3lc-8W-6aQ" id="UQ0-fu-EFA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="380" id="hKV-Sa-84i">
-                                        <rect key="frame" x="0.0" y="368.5" width="414" height="380"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="360" id="hKV-Sa-84i">
+                                        <rect key="frame" x="0.0" y="363.5" width="414" height="360"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hKV-Sa-84i" id="jSr-gK-hnR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KMv-pg-yeG">
-                                                    <rect key="frame" x="0.0" y="5" width="414" height="375"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KMv-pg-yeG">
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="355"/>
                                                     <color key="backgroundColor" name="blackColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="362" id="7KR-UG-goC"/>
+                                                        <constraint firstAttribute="height" constant="400" id="7KR-UG-goC"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="81n-w2-IrZ">
                                                         <size key="itemSize" width="128" height="128"/>
@@ -832,6 +832,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="KMv-pg-yeG" secondAttribute="trailing" id="u5J-T4-xNV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.49202345450000001" green="0.7469438585" blue="0.76871567959999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -844,9 +845,9 @@
                         <color key="backgroundColor" name="blackColor"/>
                         <constraints>
                             <constraint firstItem="PvB-Dg-lAb" firstAttribute="trailing" secondItem="VaT-Iu-I8y" secondAttribute="trailing" id="6Oh-I8-Awv"/>
-                            <constraint firstItem="VaT-Iu-I8y" firstAttribute="bottom" secondItem="PvB-Dg-lAb" secondAttribute="bottom" constant="50" id="byf-Dd-HSo"/>
+                            <constraint firstItem="VaT-Iu-I8y" firstAttribute="top" secondItem="PvB-Dg-lAb" secondAttribute="top" id="cAg-5a-euz"/>
                             <constraint firstItem="VaT-Iu-I8y" firstAttribute="leading" secondItem="PvB-Dg-lAb" secondAttribute="leading" id="eqZ-dA-56E"/>
-                            <constraint firstItem="PvB-Dg-lAb" firstAttribute="top" secondItem="VaT-Iu-I8y" secondAttribute="top" id="lFT-1c-bbP"/>
+                            <constraint firstItem="VaT-Iu-I8y" firstAttribute="bottom" secondItem="PvB-Dg-lAb" secondAttribute="bottom" id="q8k-YA-new"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="kot_Bali" id="VyC-Og-Ttw">
@@ -1136,6 +1137,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fDj-gT-txL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="blackColor"/>
                         <color key="barTintColor" name="blackColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="whiteColor"/>
