@@ -21,6 +21,11 @@
 		338E77B028FDA93300683685 /* AddHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77AF28FDA93300683685 /* AddHistoryViewController.swift */; };
 		338E77B428FDA97F00683685 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E77B328FDA97F00683685 /* UserViewController.swift */; };
 		33C5CFF32901CD920083CBEC /* LikesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5CFF22901CD920083CBEC /* LikesTableViewController.swift */; };
+		33F055232905DA640040866E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F055222905DA640040866E /* CollectionViewCell.swift */; };
+		33F055252905DB250040866E /* ModelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F055242905DB250040866E /* ModelCollectionViewCell.swift */; };
+		33F055282905E0640040866E /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F055272905E0640040866E /* HistoryTableViewCell.swift */; };
+		33F0552A2905EEBA0040866E /* ModelHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F055292905EEBA0040866E /* ModelHistoryCell.swift */; };
+		33F0552C2905F0E30040866E /* HistoriCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0552B2905F0E30040866E /* HistoriCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		338E77AF28FDA93300683685 /* AddHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewController.swift; sourceTree = "<group>"; };
 		338E77B328FDA97F00683685 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		33C5CFF22901CD920083CBEC /* LikesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesTableViewController.swift; sourceTree = "<group>"; };
+		33F055222905DA640040866E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		33F055242905DB250040866E /* ModelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCollectionViewCell.swift; sourceTree = "<group>"; };
+		33F055272905E0640040866E /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		33F055292905EEBA0040866E /* ModelHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHistoryCell.swift; sourceTree = "<group>"; };
+		33F0552B2905F0E30040866E /* HistoriCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +82,9 @@
 		338E63CE28FD3A64000B017A /* Instagram_App */ = {
 			isa = PBXGroup;
 			children = (
-				3358BCF1290554BC00A59E04 /* ModelCell.swift */,
 				338E63CF28FD3A64000B017A /* AppDelegate.swift */,
 				338E63D128FD3A64000B017A /* SceneDelegate.swift */,
+				3358BCF1290554BC00A59E04 /* ModelCell.swift */,
 				338E77AC28FDA8D600683685 /* ViewControllers */,
 				338E63D528FD3A64000B017A /* Main.storyboard */,
 				338E63D828FD3A67000B017A /* Assets.xcassets */,
@@ -89,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				338E63D328FD3A64000B017A /* HomeViewController.swift */,
-				338E77AD28FDA91300683685 /* SearchViewController.swift */,
+				33F055262905DCA00040866E /* search */,
 				338E77AF28FDA93300683685 /* AddHistoryViewController.swift */,
 				338E77B328FDA97F00683685 /* UserViewController.swift */,
 				33C5CFF62901CF920083CBEC /* LikesTableView */,
@@ -105,6 +115,19 @@
 				3358BCF529055B5600A59E04 /* FollowedTableViewCell.swift */,
 			);
 			path = LikesTableView;
+			sourceTree = "<group>";
+		};
+		33F055262905DCA00040866E /* search */ = {
+			isa = PBXGroup;
+			children = (
+				338E77AD28FDA91300683685 /* SearchViewController.swift */,
+				33F055242905DB250040866E /* ModelCollectionViewCell.swift */,
+				33F055292905EEBA0040866E /* ModelHistoryCell.swift */,
+				33F0552B2905F0E30040866E /* HistoriCollectionViewCell.swift */,
+				33F055272905E0640040866E /* HistoryTableViewCell.swift */,
+				33F055222905DA640040866E /* CollectionViewCell.swift */,
+			);
+			path = search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,14 +226,19 @@
 			files = (
 				3358BCF2290554BC00A59E04 /* ModelCell.swift in Sources */,
 				33C5CFF32901CD920083CBEC /* LikesTableViewController.swift in Sources */,
+				33F0552C2905F0E30040866E /* HistoriCollectionViewCell.swift in Sources */,
+				33F055282905E0640040866E /* HistoryTableViewCell.swift in Sources */,
 				338E77B428FDA97F00683685 /* UserViewController.swift in Sources */,
 				3358BCF629055B5600A59E04 /* FollowedTableViewCell.swift in Sources */,
 				338E63D428FD3A64000B017A /* HomeViewController.swift in Sources */,
 				3358BCF02905528200A59E04 /* CommentTableViewCell.swift in Sources */,
 				338E63D028FD3A64000B017A /* AppDelegate.swift in Sources */,
+				33F0552A2905EEBA0040866E /* ModelHistoryCell.swift in Sources */,
 				338E77AE28FDA91300683685 /* SearchViewController.swift in Sources */,
+				33F055252905DB250040866E /* ModelCollectionViewCell.swift in Sources */,
 				338E63D228FD3A64000B017A /* SceneDelegate.swift in Sources */,
 				338E77B028FDA93300683685 /* AddHistoryViewController.swift in Sources */,
+				33F055232905DA640040866E /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
