@@ -8,6 +8,6 @@
 import Foundation
 
 /// структура для передачи массивов фото в 4 ячейку
-struct PostCell {
-    var nameImage: [String]
+struct Post {
+    let nameImage: String
 }

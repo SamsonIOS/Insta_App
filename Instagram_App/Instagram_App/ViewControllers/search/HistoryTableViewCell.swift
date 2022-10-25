@@ -37,21 +37,19 @@ final class HistoryTableViewCell: UITableViewCell {
         static let eigth = "Грива"
     }
     // MARK: IBOutlet
-    @IBOutlet weak var collectionHistory: UICollectionView!
+    @IBOutlet private weak var collectionHistory: UICollectionView!
     
     // MARK: Private Methods
-    private let historyInfo = CollectionCell(
-        nameImage: [
-            HistoryImageName.five, HistoryImageName.six,
-            HistoryImageName.first, HistoryImageName.seconds,
-            HistoryImageName.third, HistoryImageName.fourth,
-            HistoryImageName.eight, HistoryImageName.seven],
-        
-        nameHistory: [
-            HistoryLabelText.first, HistoryLabelText.seconds,
-            HistoryLabelText.third, HistoryLabelText.fourth,
-            HistoryLabelText.five, HistoryLabelText.six,
-            HistoryLabelText.seven, HistoryLabelText.eigth])
+    private let historyInfo = [
+        Collection(nameImage: HistoryImageName.first, nameHistory: HistoryLabelText.first),
+        Collection(nameImage: HistoryImageName.seconds, nameHistory: HistoryLabelText.seconds),
+        Collection(nameImage: HistoryImageName.third, nameHistory: HistoryLabelText.third),
+        Collection(nameImage: HistoryImageName.fourth, nameHistory: HistoryLabelText.fourth),
+        Collection(nameImage: HistoryImageName.five, nameHistory: HistoryLabelText.five),
+        Collection(nameImage: HistoryImageName.six, nameHistory: HistoryLabelText.six),
+        Collection(nameImage: HistoryImageName.seven, nameHistory: HistoryLabelText.seven),
+        Collection(nameImage: HistoryImageName.eight, nameHistory: HistoryLabelText.eigth),
+    ]
     
     // MARK: Life cycle
     override func awakeFromNib() {
@@ -59,25 +57,18 @@ final class HistoryTableViewCell: UITableViewCell {
         setDelegate()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     // MARK: Private Methods
     private func setDelegate() {
         collectionHistory.delegate = self
         collectionHistory.dataSource = self
     }
-    
 }
 
-// MARK: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
-extension HistoryTableViewCell:
-    UICollectionViewDataSource,
-    UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+// MARK: UICollectionViewDataSource, UICollectionViewDelegate
+extension HistoryTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return historyInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -85,11 +76,13 @@ extension HistoryTableViewCell:
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Constants.idCell, for: indexPath) as? HistoriCollectionViewCell
         else { return UICollectionViewCell() }
-        
-        cell.configHistory(historyInfo, index: indexPath.row)
+        cell.configHistory(historyInfo[indexPath.row])
         return cell
     }
-    
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension HistoryTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -11,11 +11,11 @@ import UIKit
 final class PostCollectionViewCell: UICollectionViewCell {
     
     // MARK: IBOutlet
-    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet private weak var postImageView: UIImageView!
     
     // MARK: Public Methods
-    func configCell(_ model: PostCell, index: Int) {
-        postImageView.image = UIImage(named: model.nameImage[index])
+    func configCell(_ name: Post) {
+        postImageView.image = UIImage(named: name.nameImage)
     }
     
 }

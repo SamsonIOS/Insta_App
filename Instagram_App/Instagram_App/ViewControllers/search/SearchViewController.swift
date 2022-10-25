@@ -21,7 +21,7 @@ final class SearchViewController: UIViewController {
         static let postImageCell = "imageCell"
     }
     
-    private enum NameImageView {
+    private enum ImageViewName {
         static let first = "kot1"
         static let second = "kot2"
         static let third = "kot3"
@@ -34,22 +34,23 @@ final class SearchViewController: UIViewController {
     }
     
     // MARK: Private propertis
-    private let photo = PostCell(nameImage: [
-    NameImageView.first, NameImageView.second,
-    NameImageView.third, NameImageView.fourth,
-    NameImageView.five, NameImageView.seven,
-    NameImageView.eight, NameImageView.nine, NameImageView.six])
-    
-    // MARK: Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let photos = [
+        Post(nameImage: ImageViewName.first),
+        Post(nameImage: ImageViewName.second),
+        Post(nameImage: ImageViewName.third),
+        Post(nameImage: ImageViewName.fourth),
+        Post(nameImage: ImageViewName.five),
+        Post(nameImage: ImageViewName.six),
+        Post(nameImage: ImageViewName.seven),
+        Post(nameImage: ImageViewName.eight),
+        Post(nameImage: ImageViewName.nine)
+    ]
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,10 +83,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension SearchViewController:
-    UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photo.nameImage.count
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -94,11 +95,13 @@ extension SearchViewController:
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: IdCell.postImageCell, for: indexPath) as? PostCollectionViewCell
         else { return UICollectionViewCell() }
-        cell.configCell(photo, index: indexPath.row)
-        return cell
         
+        cell.configCell(photos[indexPath.row])
+        return cell
     }
-    
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

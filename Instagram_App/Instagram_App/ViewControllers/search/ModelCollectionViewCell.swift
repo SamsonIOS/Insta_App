@@ -8,7 +8,7 @@
 import Foundation
 
 /// структура для передачи данных в ячейку истории
-struct CollectionCell {
-    var nameImage: [String]
-    var nameHistory: [String]
+struct Collection {
+    let nameImage: String
+    let nameHistory: String
 }
