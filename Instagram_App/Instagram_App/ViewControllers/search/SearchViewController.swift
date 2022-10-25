@@ -15,6 +15,7 @@ final class SearchViewController: UIViewController {
         static let userCell = "infoUser"
         static let infoMan = "infoMan"
         static let history = "historyCell"
+        static let buttonCell = "buttonCell"
         static let historyCell = "ImageCollectionCell"
         static let post = "postCell"
         static let postImageCell = "imageCell"
@@ -48,7 +49,7 @@ final class SearchViewController: UIViewController {
 // MARK: UITableViewDelegate, UITableViewDataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,9 +66,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 withIdentifier: IdCell.history,
                 for: indexPath) as? HistoryTableViewCell
             else { return UITableViewCell() }
-            
             return cell
         case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: IdCell.buttonCell, for: indexPath)
+            return cell
+        case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: IdCell.post, for: indexPath)
             return cell
         default:

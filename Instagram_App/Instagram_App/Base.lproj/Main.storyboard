@@ -697,15 +697,15 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="blackColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="88" id="NQZ-NI-bjf" customClass="HistoryTableViewCell" customModule="Instagram_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="275.5" width="414" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="91" id="NQZ-NI-bjf" customClass="HistoryTableViewCell" customModule="Instagram_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="275.5" width="414" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NQZ-NI-bjf" id="1xO-Lr-XVJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-8W-6aQ">
-                                                    <rect key="frame" x="20" y="0.0" width="394" height="88"/>
+                                                    <rect key="frame" x="20" y="0.0" width="394" height="91"/>
                                                     <color key="backgroundColor" name="blackColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="88" id="xtW-NM-nRc"/>
@@ -718,7 +718,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionCell" id="sNj-dd-bkR" customClass="HistoriCollectionViewCell" customModule="Instagram_App" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="88"/>
+                                                            <rect key="frame" x="0.0" y="1.5" width="74" height="88"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UFb-J9-jyU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="88"/>
@@ -779,8 +779,43 @@
                                             <outlet property="collectionHistory" destination="3lc-8W-6aQ" id="UQ0-fu-EFA"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="buttonCell" id="yQv-OC-Z59">
+                                        <rect key="frame" x="0.0" y="366.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yQv-OC-Z59" id="m53-vL-JGd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cij-jk-bcQ">
+                                                    <rect key="frame" x="0.0" y="4" width="127" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="Grid">
+                                                        <color key="baseForegroundColor" name="whiteColor"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTR-lP-LE5">
+                                                    <rect key="frame" x="287" y="4" width="127" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="Tags">
+                                                        <color key="baseForegroundColor" name="whiteColor"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-92-c4b">
+                                                    <rect key="frame" x="144" y="4" width="127" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="IGTV">
+                                                        <color key="baseForegroundColor" name="whiteColor"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="blackColor"/>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="360" id="hKV-Sa-84i">
-                                        <rect key="frame" x="0.0" y="363.5" width="414" height="360"/>
+                                        <rect key="frame" x="0.0" y="410.5" width="414" height="360"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hKV-Sa-84i" id="jSr-gK-hnR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
@@ -832,7 +867,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="KMv-pg-yeG" secondAttribute="trailing" id="u5J-T4-xNV"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.49202345450000001" green="0.7469438585" blue="0.76871567959999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1159,14 +1193,17 @@
         <image name="Collect" width="19" height="23"/>
         <image name="Comment - Outline" width="23" height="23"/>
         <image name="Direct" width="25" height="23"/>
+        <image name="Grid" width="23" height="23"/>
         <image name="Heart - Fill" width="24" height="22"/>
         <image name="Home - Fill" width="22" height="22"/>
         <image name="Home - Outline" width="24" height="24"/>
+        <image name="IGTV" width="23" height="26"/>
         <image name="More" width="15" height="3"/>
         <image name="New photo - video" width="24" height="24"/>
         <image name="Page 1" width="24" height="22"/>
         <image name="Profile" width="23" height="23"/>
         <image name="Profile - Fill" width="23" height="23"/>
+        <image name="Tags" width="22" height="23"/>
         <image name="Union" width="23" height="24"/>
         <image name="Vector 8" width="12" height="6"/>
         <image name="ava" width="900" height="900"/>
